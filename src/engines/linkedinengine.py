@@ -32,7 +32,7 @@ class Linkedinengine:
         def clickcookie(self):
                 if not self.cookieclicked.linkedin:                                                          
                         cookbutel = self.driver.find_element_by_xpath('//div[@id="artdeco-global-alert-container"]/div[1]/section/div/div[2]/button[2]')
-                        selenutils = Selenutils(self, self.trace, self.driver, self.humanize)
+                        selenutils = Selenutils(self.trace, self.driver, self.humanize)
                         selenutils.doclick(cookbutel)
                 self.cookieclicked.linkedin = True
                 

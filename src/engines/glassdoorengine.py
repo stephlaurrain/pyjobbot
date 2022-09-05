@@ -38,7 +38,7 @@ class Glassdoorengine:
         def clickcookie(self):
                 if not self.cookieclicked.glassdoor: 
                         cookbutel = self.driver.find_element_by_id("onetrust-accept-btn-handler")
-                        selenutils = Selenutils(self, self.trace, self.driver, self.humanize)
+                        selenutils = Selenutils(self.trace, self.driver, self.humanize)
                         selenutils.doclick(cookbutel)                        
                 self.cookieclicked.glassdoor = True
                                   

@@ -16,8 +16,8 @@ class Monsterengine:
         @_trace_decorator
         @_error_decorator()
         def dosearch(self, site, location, words):                
-                prms="q={words}&where={location['geosite']}&tm=7&cy=fr&rad={location['distance']}"
-                fullurl = "{site['url']}/?{prms}"
+                prms=f"q={words}&where={location['geosite']}&tm=7&cy=fr&rad={location['distance']}"
+                fullurl = f"{site['url']}/?{prms}"
                 self.driver.get(fullurl)                        
 
         @_trace_decorator
@@ -25,7 +25,7 @@ class Monsterengine:
         def clickcookie(self):
                 if not self.cookieclicked.monster:                                                            
                         cookbutel = self.driver.find_element_by_id("onetrust-accept-btn-handler")
-                        selenutils = Selenutils(self, self.trace, self.driver, self.humanize)
+                        selenutils = Selenutils(self.trace, self.driver, self.humanize)
                         selenutils.doclick(cookbutel)
                 self.cookieclicked.monster = True
                 

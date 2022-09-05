@@ -25,7 +25,7 @@ class Apecengine:
         def clickcookie(self):
                 if not self.cookieclicked.apec:
                         cookbutel = self.driver.find_element_by_id("onetrust-accept-btn-handler")
-                        selenutils = Selenutils(self, self.trace, self.driver, self.humanize)
+                        selenutils = Selenutils(self.trace, self.driver, self.humanize)
                         selenutils.doclick(cookbutel)
                 self.cookieclicked.apec = True
       
