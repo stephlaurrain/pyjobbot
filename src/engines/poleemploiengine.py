@@ -25,7 +25,7 @@ class Poleemploiengine:
         def clickcookie(self):
                 if not self.cookieclicked.polemploi:                                                          
                         cookbutel = self.driver.find_element_by_id("footer_tc_privacy_button_2")  
-                        selenutils = Selenutils(self, self.trace, self.driver, self.humanize)
+                        selenutils = Selenutils(self.trace, self.driver, self.humanize)
                         selenutils.doclick(cookbutel)
                 self.cookieclicked.polemploi = True
                 
