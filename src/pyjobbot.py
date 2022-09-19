@@ -173,7 +173,6 @@ class Bot:
 
         def main(self):                         
                 try:
-                        self.rootApp = os.getcwd()
                         # InitBot
                         # args
                         self.removestop() #remove stop file
