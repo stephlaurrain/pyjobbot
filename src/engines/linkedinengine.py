@@ -2,6 +2,8 @@
 import math
 from utils.mydecorators import _error_decorator, _trace_decorator
 from selenutils.selenutils import Selenutils
+from selenium.webdriver.common.by import By
+
 
 
 class Linkedinengine:
@@ -31,7 +33,7 @@ class Linkedinengine:
         @_error_decorator(False)
         def clickcookie(self):
                 if not self.cookieclicked.linkedin:                                                          
-                        cookbutel = self.driver.find_element_by_xpath('//div[@id="artdeco-global-alert-container"]/div[1]/section/div/div[2]/button[2]')
+                        cookbutel = self.driver.find_element(By.XPATH, '//div[@id="artdeco-global-alert-container"]/div[1]/section/div/div[2]/button[2]')
                         selenutils = Selenutils(self.trace, self.driver, self.humanize)
                         selenutils.doclick(cookbutel)
                 self.cookieclicked.linkedin = True

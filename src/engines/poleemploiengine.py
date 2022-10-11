@@ -1,6 +1,7 @@
 # -*-coding:utf-8 -*
 from utils.mydecorators import _error_decorator, _trace_decorator
 from selenutils.selenutils import Selenutils
+from selenium.webdriver.common.by import By
 
 class Poleemploiengine:
       
@@ -24,7 +25,7 @@ class Poleemploiengine:
         @_error_decorator(False)
         def clickcookie(self):
                 if not self.cookieclicked.polemploi:                                                          
-                        cookbutel = self.driver.find_element_by_id("footer_tc_privacy_button_2")  
+                        cookbutel = self.driver.find_element(By.ID, "footer_tc_privacy_button_2")  
                         selenutils = Selenutils(self.trace, self.driver, self.humanize)
                         selenutils.doclick(cookbutel)
                 self.cookieclicked.polemploi = True

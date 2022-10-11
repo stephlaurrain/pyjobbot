@@ -1,7 +1,7 @@
 # -*-coding:utf-8 -*
 from utils.mydecorators import _error_decorator, _trace_decorator
 from selenutils.selenutils import Selenutils
-
+from selenium.webdriver.common.by import By
 
 class Neuvooengine:
       

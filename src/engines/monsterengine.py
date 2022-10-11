@@ -1,7 +1,7 @@
 # -*-coding:utf-8 -*
 from utils.mydecorators import _error_decorator, _trace_decorator
 from selenutils.selenutils import Selenutils
-
+from selenium.webdriver.common.by import By
 
 class Monsterengine:
       
@@ -24,7 +24,7 @@ class Monsterengine:
         @_error_decorator(False)
         def clickcookie(self):
                 if not self.cookieclicked.monster:                                                            
-                        cookbutel = self.driver.find_element_by_id("onetrust-accept-btn-handler")
+                        cookbutel = self.driver.find_element(By.ID, "onetrust-accept-btn-handler")
                         selenutils = Selenutils(self.trace, self.driver, self.humanize)
                         selenutils.doclick(cookbutel)
                 self.cookieclicked.monster = True
