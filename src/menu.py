@@ -16,7 +16,7 @@ rootApp = os.getcwd()
 def dotail(profil):       
     
     logFilename = f"{rootApp}{os.path.sep}log{os.path.sep}{profil}{dnow}.log"
-    os.system (f"tail -f {logFilename}"
+    os.system (f"tail -f {logFilename}")
 
 def kill():
     # kill them

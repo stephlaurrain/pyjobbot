@@ -74,14 +74,14 @@ class Bot:
                 
 
         def stop(self):  
-                stopfile =f"{self.rootApp}{os.path.sep}stop"
+                stopfile =f"{self.root_app}{os.path.sep}stop"
                 res = path.exists(stopfile)
                 if (res):                                                
                         self.log.lg("=STOP CRAWLING=")
                 return res  
 
         def removestop(self):  
-                stopfile =f"{self.rootApp}{os.path.sep}stop"
+                stopfile =f"{self.root_app}{os.path.sep}stop"
                 res = path.exists(stopfile)
                 if (res):os.remove(stopfile)
 
@@ -175,7 +175,7 @@ class Bot:
                 try:
                         # InitBot
                         # args
-                        self.removestop() #remove stop file
+                        
                         nbargs = len(sys.argv)
                         command = "doreport" if (nbargs == 1) else sys.argv[1]
                         #command = "test" if (nbargs == 1) else sys.argv[1]
@@ -184,6 +184,7 @@ class Bot:
                         param = "default" if (nbargs < 4) else sys.argv[3].lower()                
                         print(f"command={command}") 
                         self.init_main(command, jsonfile) 
+                        self.removestop() #remove stop file
                         #logs
                        
                         # for tests command = "doreport"
@@ -208,7 +209,7 @@ class Bot:
                 except Exception as e:
 
                         print("==>> GLOBAL MAIN EXCEPTION <<==")
-                        self.log.errlg(e)
+                        # self.log.errlg(e)
                         self.driver.close()
                         self.driver.quit() 
                         return False
